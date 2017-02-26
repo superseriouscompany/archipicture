@@ -4,13 +4,17 @@ import Diagram from '../containers/DiagramCtrl'
 import Panel from '../containers/PanelCtrl';
 
 export default class Home extends Component {
-  render() { return (
+  render() {
+    const panelClasses = ['panel-container'];
+    if( this.props.showPanel ) { panelClasses.push('shown'); }
+    return (
     <div className="home">
-      <Diagram />
-      { this.props.showPanel ?
+      <div className="diagram-container">
+        <Diagram />
+      </div>
+      <div className={panelClasses.join(' ')}>
         <Panel />
-      : null
-      }
+      </div>
     </div>
   )}
 }

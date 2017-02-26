@@ -3,6 +3,14 @@
   flex-direction: row;
   justify-content: center;
 }
-.home .info {
+.home .panel-container {
   flex: 1;
+  opacity: 0;
+  transition: flex-grow 0.25s, opacity 0.25s;
+  flex-grow: 0.1;
+}
+.home .panel-container.shown {
+  display: block;
+  opacity: 1;
+  flex-grow: 1;
 }
