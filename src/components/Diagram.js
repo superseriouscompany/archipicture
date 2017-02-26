@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Diagram.css'
+import '../styles/Diagram.css'
 
 export default class Diagram extends Component {
   render() { return (
