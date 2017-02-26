@@ -4,11 +4,14 @@ import Diagram from '../containers/DiagramCtrl'
 
 export default class Home extends Component {
   render() { return (
-    <div>
+    <div className="home">
       <Diagram />
-      <div className="info">
-        Info Panel
-      </div>
+      { this.props.showInfoPanel ?
+        <div className="info">
+          Info Panel
+        </div>
+      : null
+      }
     </div>
   )}
 }
