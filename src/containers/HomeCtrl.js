@@ -9,7 +9,9 @@ class HomeCtrl extends Component {
 }
 
 function mapStateToProps(state) {
-  return {};
+  return {
+    showPanel: !!state.panel.visible,
+  };
 }
 
 export default connect(mapStateToProps)(HomeCtrl);

@@ -6,7 +6,7 @@ export default class Home extends Component {
   render() { return (
     <div className="home">
       <Diagram />
-      { this.props.showInfoPanel ?
+      { this.props.showPanel ?
         <div className="info">
           Info Panel
         </div>

@@ -1,7 +1,7 @@
 import {createStore, combineReducers} from 'redux';
-import diagram from './diagram'
+import panel from './panel'
 const reducers = combineReducers({
-  diagram,
+  panel,
 })
 
 const store = createStore(
