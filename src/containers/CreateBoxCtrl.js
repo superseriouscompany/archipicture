@@ -11,10 +11,10 @@ class CreateBoxCtrl extends Component {
 function mapStateToProps(state) {
   return {
     repos: [
-      { full_name: 'superseriouscompany/archipicture.superserious.co' },
-      { full_name: 'superseriouscompany/floats.superserious.co' },
-      { full_name: 'superseriouscompany/giggles.superserious.co' },
-      { full_name: 'neilsarkar/hello' },
+      { id: 1, full_name: 'superseriouscompany/archipicture.superserious.co' },
+      { id: 2, full_name: 'superseriouscompany/floats.superserious.co' },
+      { id: 3, full_name: 'superseriouscompany/giggles.superserious.co' },
+      { id: 4, full_name: 'neilsarkar/hello' },
     ]
   };
 }

@@ -7,9 +7,7 @@ import store from './reducers'
 export default class App extends Component {
   render() { return (
     <Provider store={store}>
-      <div>
-        <Home />
-      </div>
+      <Home />
     </Provider>
   )}
 }
