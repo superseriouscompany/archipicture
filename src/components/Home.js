@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import '../styles/Home.css'
 import Diagram from '../containers/DiagramCtrl'
 import Panel from '../containers/PanelCtrl';
 

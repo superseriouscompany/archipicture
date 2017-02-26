@@ -9,3 +9,7 @@ a { cursor: pointer; color: slateblue; text-decoration: none; } a:hover { text-d
 .create-box td { margin: 0; padding: 0; border: 0; font-size: 12px; }
 .create-box select { font-size: 20px; margin-bottom: 1em; }
 .create-box button { font-size: 30px; margin-top: 2em; }
+
+.home { display: flex; flex-direction: row; justify-content: center; }
+.home .panel-container { opacity: 0; transition: flex-grow 0.25s, opacity 0.25s; width: 0; flex-grow: 0.1; }
+.home .panel-container.shown { opacity: 1; flex-grow: 1; width: auto; }
