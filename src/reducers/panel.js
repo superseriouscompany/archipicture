@@ -4,8 +4,8 @@ export default function panel(state = {}, action) {
       return {
         ...state,
         visible: true,
+        title: 'Create Box',
       }
-      return state;
     case 'panel:hide':
       return {
         ...state,
