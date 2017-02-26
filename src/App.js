@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 import './App.css';
 import StripeCheckout from 'react-stripe-checkout'
 
+const baseUrl = window.location.href.match(/localhost/) ?
+  'http://localhost:3000' :
+  'https://archipicture.superserious.co';
+
 export default class App extends Component {
   onToken(token) {
     const body = {
       email: token.email,
       token: token.id,
     }
-    fetch(`http://localhost:3000/pay`, {
+    fetch(`${baseUrl}/pay`, {
       method: 'POST',
       body: JSON.stringify(body),
       headers: { 'Content-Type': 'application/json' },
