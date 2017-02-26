@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import '../styles/CreateBox.css'
 
 export default class CreateBox extends Component {
   render() { return (

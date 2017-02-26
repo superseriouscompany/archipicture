@@ -4,3 +4,8 @@ html, body, #root { height: 100%; }
 a { cursor: pointer; color: slateblue; text-decoration: none; } a:hover { text-decoration: underline; }
 .pay { background-color: cornflowerblue; border-radius: 10px; box-shadow: 0 0 20px hotpink; color: white; margin-top: 2em; padding: .2em .8em; cursor: pointer; }
 .hello { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+
+.create-box { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+.create-box td { margin: 0; padding: 0; border: 0; font-size: 12px; }
+.create-box select { font-size: 20px; margin-bottom: 1em; }
+.create-box button { font-size: 30px; margin-top: 2em; }
