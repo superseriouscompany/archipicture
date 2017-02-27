@@ -13,6 +13,7 @@ class BoxCtrl extends Component {
       type:      'panel:show',
       panelType: 'box-info',
       box:       this.props.box,
+      title:     `Edit ${this.props.box.name}`,
     })
   }
 

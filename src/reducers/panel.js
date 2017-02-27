@@ -4,7 +4,7 @@ export default function panel(state = {}, action) {
       return {
         ...state,
         visible: true,
-        title: 'Create Box',
+        title: action.title || 'Create Box',
         box: action.box,
         panelType: action.panelType,
       }
