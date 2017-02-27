@@ -29,3 +29,12 @@ button { font-size: 30px; margin-top: 1em; min-width: 3em; background-image: lin
 .box-info label { display: block; margin-bottom: 1em; }
 .box-info input { display:    block; width: 100%; font-size: 30px; padding: .2em .5em; margin-top: .1em; }
 .box-info textarea { display: block; width: 100%; font-size: 15px; padding: .2em .5em; margin-top: .1em; }
+
+/* NEW SHIT */
+
+.playpen { height: 100%; padding: 1em 5em; }
+.header .logout { float: right; }
+.mat { height: 80%; border: 1px solid black; display: flex; align-items: center; justify-content: center; }
+.drawer { display: flex; }
+.chest  { display: flex; justify-content: space-between; align-items: center; flex: .8 }
+.trash  { display: flex; justify-content: center; align-items: center; flex: .2 }
