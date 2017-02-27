@@ -42,6 +42,7 @@ export default class BoxInfo extends Component {
                 </tr>
               </tbody>
             </table>
+            <a href={this.props.box.gcloudUrl} target="_blank">View on Google Cloud Platform</a>
           </div>
         :
           <a onClick={e => this.setState({showDetails: true})}>Show Details</a>

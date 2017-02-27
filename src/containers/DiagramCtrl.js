@@ -31,6 +31,7 @@ function mapStateToProps(state) {
         sha:         '78cfdfb8dfc63b5098e3941da588f7e6fe4ea874',
         ip:          '10.1.1.2',
         sshUsername: 'neilsarkar',
+        gcloudUrl:   'https://console.cloud.google.com/compute/instancesDetail/zones/europe-west1-c/instances/instance-1',
       }
     ]
   }
