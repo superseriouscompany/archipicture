@@ -3,7 +3,19 @@ import React, { Component } from 'react'
 export default class Box extends Component {
   render() { return (
     <div className="box">
-      {this.props.box.name}
+      <div className="name">{this.props.box.name}</div>
+      { this.props.box.description ?
+        <p>{this.props.box.description}</p>
+      : null }
+      <div className="price">
+        {this.props.box.price}
+      </div>
+      <div className="ip">
+        <a href="http://10.1.1.2">10.1.1.2</a>
+      </div>
+      <div className="git">
+        <a>ssh://git@archipicture.superserious.co:/archipicture.superserious.co.git</a>
+      </div>
     </div>
   )}
 }

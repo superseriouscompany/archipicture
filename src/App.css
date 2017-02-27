@@ -17,8 +17,10 @@ a { cursor: pointer; color: slateblue; text-decoration: none; } a:hover { text-d
 .home .panel-container.shown { opacity: 1; flex-grow: 1; width: auto; }
 
 .diagram { display: flex; flex-direction: column; justify-content: center; align-items: center; }
-.diagram .box { padding: 1em 1.2em; border: 1px solid black; display: inline-block; width: 200px; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.diagram .box { padding: 1em 1.2em; border: 1px solid black; display: inline-block; width: 200px; height: 200px; display: flex; flex-direction: column; align-items: center; }
+.diagram .box .name { flex: 1 }
+.diagram .box .git { text-overflow: ellipsis; overflow: hidden; white-space: nowrap; width: 100%; }
 .diagram .box + .create.box { margin-top: 1em; }
-.diagram .create.box { border: 1px dashed silver; color: silver; display: inline-block; font-size: 4em; }
+.diagram .create.box { border: 1px dashed silver; color: silver; display: inline-block; font-size: 4em; justify-content: center; }
 .diagram .create.box:hover { border-color: slateblue; color: slateblue; font-weight: bold; cursor: pointer; }
 .diagram hr { border: 0; margin: 0; color: hotpink; background-color: hotpink; }
