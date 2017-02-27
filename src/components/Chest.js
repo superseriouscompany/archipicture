@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import LilBox from './LilBox';
+import BigBox from './BigBox';
+import RepoToy from './RepoToy';
 
 export default class Chest extends Component {
   render() { return (
     <div className="chest">
       <LilBox />
-      <div>big box</div>
-      <div>git repo</div>
+      <BigBox />
+      <RepoToy />
     </div>
   )}
 }

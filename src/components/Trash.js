@@ -7,7 +7,3 @@ export default class Trash extends Component {
     </div>
   )}
 }
-
-Trash.propTypes = {
-
-}

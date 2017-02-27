@@ -12,11 +12,11 @@ class Mat extends Component {
     const { canDrop, isOver, connectDropTarget } = this.props;
     const isActive = canDrop && isOver;
 
-    let backgroundColor = '#222';
+    let backgroundColor = 'white';
     if (isActive) {
-      backgroundColor = 'darkgreen';
+      backgroundColor = 'hotpink';
     } else if (canDrop) {
-      backgroundColor = 'darkkhaki';
+      backgroundColor = 'cornflowerblue';
     }
 
     return connectDropTarget(
