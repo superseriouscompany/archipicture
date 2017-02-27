@@ -36,7 +36,7 @@ const boxTarget = {
   },
 };
 
-export default DropTarget('box', boxTarget, (connect, monitor) => ({
+export default DropTarget('toy', boxTarget, (connect, monitor) => ({
   connectDropTarget: connect.dropTarget(),
   isOver: monitor.isOver(),
   canDrop: monitor.canDrop(),

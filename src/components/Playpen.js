@@ -13,20 +13,12 @@ export default class Playpen extends Component {
     <DragDropContextProvider backend={HTML5Backend}>
       <div className="playpen">
         <Header />
-        <div style={{overflow: 'hidden', clear: 'both'}}>
-          <Mat />
-        </div>
+        <Mat />
         <div className="drawer">
-          <div style={{overflow: 'hidden', clear: 'both'}}>
-            <Chest />
-          </div>
+          <Chest />
           <Trash />
         </div>
       </div>
     </DragDropContextProvider>
   )}
-}
-
-Playpen.propTypes = {
-
 }

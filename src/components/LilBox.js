@@ -5,12 +5,10 @@ class LilBox extends Component {
   static propTypes = {
     connectDragSource: PropTypes.func.isRequired,
     isDragging:        PropTypes.bool.isRequired,
-    name:              PropTypes.string.isRequired,
   };
 
   render() {
     const { isDragging, connectDragSource } = this.props;
-    const { name } = this.props;
     const opacity = isDragging ? 0.4 : 1;
 
     return (
@@ -28,7 +26,7 @@ class LilBox extends Component {
 const boxSource = {
   beginDrag(props) {
     return {
-      name: props.name,
+      name: 'lilbox',
     };
   },
 
@@ -44,7 +42,7 @@ const boxSource = {
   },
 };
 
-export default DragSource('box', boxSource, (connect, monitor) => ({
+export default DragSource('toy', boxSource, (connect, monitor) => ({
   connectDragSource: connect.dragSource(),
   isDragging: monitor.isDragging(),
 }))(LilBox)
