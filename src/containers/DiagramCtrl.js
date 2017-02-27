@@ -19,6 +19,23 @@ class DiagramCtrl extends Component {
 
 function mapStateToProps(state) {
   return {
+    boxes: [
+      {
+        id:          1,
+        name:        'floats.superserious.co',
+        description: 'rad rad pad',
+        price:       '$25/month',
+        region:      'Europe - London',
+        cpu:         4,
+        memory:      '15gb',
+        sha:         '78cfdfb8dfc63b5098e3941da588f7e6fe4ea874',
+        ip:          '10.1.1.2',
+        sshUsername: 'neilsarkar',
+      }
+    ]
+  }
+
+  return {
     boxes: state.infra.boxes,
   }
 }

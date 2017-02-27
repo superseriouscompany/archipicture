@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../styles/Panel.css'
-import CreateBox from '../containers/CreateBoxCtrl';
+import CreateBox from '../containers/CreateBoxCtrl'
+import BoxInfo from '../containers/BoxInfoCtrl'
 
 export default class Panel extends Component {
   render() { return (
@@ -10,7 +11,11 @@ export default class Panel extends Component {
         <a className="close" onClick={this.props.closePanel}>&times;</a>
       </h2>
 
-      <CreateBox />
+      { this.props.panelType == 'box-info' ?
+        <BoxInfo box={this.props.box} />
+      :
+        <CreateBox />
+      }
     </div>
   )}
 }

@@ -3,8 +3,21 @@ import { connect } from 'react-redux';
 import Box from '../components/Box'
 
 class BoxCtrl extends Component {
+  constructor(props) {
+    super(props)
+    this.showPanel = this.showPanel.bind(this)
+  }
+
+  showPanel() {
+    this.props.dispatch({
+      type:      'panel:show',
+      panelType: 'box-info',
+      box:       this.props.box,
+    })
+  }
+
   render() { return (
-    <Box {...this.props} />
+    <Box {...this.props} showPanel={this.showPanel}/>
   )}
 }
 

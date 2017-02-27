@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class Box extends Component {
   render() { return (
-    <div className="box">
+    <div className="box" onClick={this.props.showPanel}>
       <div className="name">{this.props.box.name}</div>
       { this.props.box.description ?
         <p>{this.props.box.description}</p>
@@ -21,6 +21,7 @@ export default class Box extends Component {
 }
 
 Box.propTypes = {
+  showPanel: React.PropTypes.func.isRequired,
   box: React.PropTypes.shape({
     name: React.PropTypes.string,
   }).isRequired

@@ -19,7 +19,9 @@ class PanelCtrl extends Component {
 
 function mapStateToProps(state) {
   return {
-    title: state.panel.title || 'Info Panel',
+    title:     state.panel.title || 'Info Panel',
+    panelType: state.panel.panelType,
+    box:       state.panel.box,
   };
 }
 
