@@ -5,10 +5,11 @@ export default class BoxInfo extends Component {
     super(props)
     this.state = Object.assign({}, { box: this.props.box })
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   render() { return (
-    <div className="box-info">
+    <form className="box-info" onSubmit={this.handleSubmit}>
       <label htmlFor="name">
         Name
         <input type="text" value={this.state.box.name} name="name" onChange={this.handleChange('name')}/>
@@ -18,6 +19,12 @@ export default class BoxInfo extends Component {
         Description
         <textarea onChange={this.handleChange('description')} value={this.state.box.description}></textarea>
       </label>
+
+      <label htmlFor="sshKey">
+        SSH Key
+        <textarea placeholder="$ pbcopy < ~/.ssh/id_rsa.pub" onChange={this.handleChange('sshKey')} value={this.state.box.sshKey}></textarea>
+      </label>
+
       <div className="details-container">
         { this.state.showDetails ?
           <div className="details">
@@ -48,12 +55,18 @@ export default class BoxInfo extends Component {
           <a onClick={e => this.setState({showDetails: true})}>Show Details</a>
         }
       </div>
-    </div>
+      <button>Update</button>
+    </form>
   )}
+
+  handleSubmit(e) {
+    e.preventDefault()
+    this.props.updateBox(this.state.box)
+  }
 
   handleChange(field) {
     return (e) => {
-      const state = { box: {}}
+      const state = { box: this.state.box }
       state.box[field] = e.target.value
       this.setState(state)
     }
@@ -61,5 +74,10 @@ export default class BoxInfo extends Component {
 }
 
 BoxInfo.propTypes = {
-
+  updateBox: React.PropTypes.func.isRequired,
+  box: React.PropTypes.shape({
+    id:          React.PropTypes.number.isRequired,
+    name:        React.PropTypes.string.isRequired,
+    description: React.PropTypes.string,
+  })
 }

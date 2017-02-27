@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class Box extends Component {
   render() { return (
-    <div className="box" onClick={(e) => e.target.tagName != 'A' && this.props.showPanel() }>
+    <div className="box" onClick={(e) => e.target.tagName !== 'A' && this.props.showPanel() }>
       <div className="name">{this.props.box.name}</div>
       <div className="price">
         {this.props.box.price}

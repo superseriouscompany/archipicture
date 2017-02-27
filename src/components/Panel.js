@@ -11,7 +11,7 @@ export default class Panel extends Component {
         <a className="close" onClick={this.props.closePanel}>&times;</a>
       </h2>
 
-      { this.props.panelType == 'box-info' ?
+      { this.props.panelType === 'box-info' ?
         <BoxInfo box={this.props.box} />
       :
         <CreateBox />
