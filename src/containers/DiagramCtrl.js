@@ -18,7 +18,9 @@ class DiagramCtrl extends Component {
 }
 
 function mapStateToProps(state) {
-  return {};
+  return {
+    boxes: state.infra.boxes,
+  }
 }
 
 export default connect(mapStateToProps)(DiagramCtrl);

@@ -4,8 +4,9 @@ import Autocomplete from 'react-autocomplete'
 export default class CreateBox extends Component {
   constructor(props) {
     super(props)
-    this.state = { value: '' }
+    this.state      = { value: '' }
     this.selectRepo = this.selectRepo.bind(this)
+    this.create     = this.create.bind(this)
   }
 
   selectRepo(value, repo) {
@@ -16,17 +17,10 @@ export default class CreateBox extends Component {
   }
 
   render() { return (
-    <form className="create-box">
-      <select>
-        { this.props.repos && this.props.repos.map((r, key) => (
-          <option key={key}>{r.full_name}</option>
-        ))}
-      </select>
-
-      <label htmlFor="repos-autocomplete">Choose a repo to deploy</label>
+    <form className="create-box" onSubmit={this.create}>
       <Autocomplete
         value={this.state.value}
-        inputProps={{id: "repos-autocomplete"}}
+        inputProps={{id: "repos-autocomplete", placeholder: "Select Repo to Deploy"}}
         items={this.props.repos}
         getItemValue={(item) => item.full_name}
         shouldItemRender={matchRepo}
@@ -34,7 +28,8 @@ export default class CreateBox extends Component {
         onSelect={this.selectRepo}
         renderItem={(item, isHighlighted) => (
           <div
-            style={isHighlighted ? {backgroundColor: 'hotpink'} : {}}
+            style={isHighlighted ? {backgroundColor: 'hotpink', color: 'white'} : {}}
+            className="autocomplete-item"
             key={item.id}
           >{item.full_name}</div>
         )}
@@ -64,6 +59,14 @@ export default class CreateBox extends Component {
       <button>Go</button>
     </form>
   )}
+
+  create(e) {
+    e.preventDefault()
+    this.props.create({
+      name: this.state.repo.full_name.split('/')[1],
+      id:   this.state.repo.id,
+    })
+  }
 }
 
 function matchRepo(repo, value) {
@@ -75,4 +78,5 @@ CreateBox.propTypes = {
   repos: React.PropTypes.arrayOf(React.PropTypes.shape({
     full_name: React.PropTypes.string,
   })),
+  create: React.PropTypes.func.isRequired,
 }
