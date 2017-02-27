@@ -1,13 +1,43 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
+import {DropTarget} from 'react-dnd'
 
-export default class Mat extends Component {
-  render() { return (
-    <div className="mat">
-      Mat
-    </div>
-  )}
+class Mat extends Component {
+  static propTypes = {
+    connectDropTarget: PropTypes.func.isRequired,
+    isOver: PropTypes.bool.isRequired,
+    canDrop: PropTypes.bool.isRequired,
+  };
+
+  render() {
+    const { canDrop, isOver, connectDropTarget } = this.props;
+    const isActive = canDrop && isOver;
+
+    let backgroundColor = '#222';
+    if (isActive) {
+      backgroundColor = 'darkgreen';
+    } else if (canDrop) {
+      backgroundColor = 'darkkhaki';
+    }
+
+    return connectDropTarget(
+      <div className="mat" style={{backgroundColor}}>
+        {isActive ?
+          'Release to drop' :
+          'Drag a box here'
+        }
+      </div>,
+    );
+  }
 }
 
-Mat.propTypes = {
+const boxTarget = {
+  drop() {
+    return { name: 'Mat' };
+  },
+};
 
-}
+export default DropTarget('box', boxTarget, (connect, monitor) => ({
+  connectDropTarget: connect.dropTarget(),
+  isOver: monitor.isOver(),
+  canDrop: monitor.canDrop(),
+}))(Mat)
