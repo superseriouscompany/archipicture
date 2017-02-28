@@ -28,7 +28,7 @@ class Mat extends Component {
         : isActive ?
           'Release to drop'
         :
-          'Drag a box here'
+          'drag a lil box in'
         }
       </div>,
     );

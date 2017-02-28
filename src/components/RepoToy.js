@@ -6,8 +6,7 @@ export default class RepoToy extends Component {
   return(
     <Toy name="repo">
       <div className="triangle"></div>
-      <br />
-      git repo
+      <div>git repo</div>
     </Toy>
   )}
 }

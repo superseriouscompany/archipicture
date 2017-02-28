@@ -1,11 +1,12 @@
 * { box-sizing: border-box; }
 
 html, body, #root { height: 100%; }
-body { font-family: 'Open Sans', Helvetica, Arial, sans-serif; }
-
-.playpen { height: 100%; padding: 1em 5em; }
-.header .logout { float: right; }
-.mat { height: 80%; border: 1px solid black; display: flex; align-items: center; justify-content: center; }
+body { font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-size: 30px; font-weight: 600; }
+a { text-decoration: underline; cursor: pointer; }
+.playpen { height: 100%; padding: 20px 55px 0; }
+.header { font-size: 30px; padding-bottom: 22px; }
+.header .logout { float: right; color: #d8d8d8; }
+.mat { height: 60%; color: #D6BB98; border: 1px solid #979797; display: flex; align-items: center; justify-content: center; }
 .drawer { display: flex; }
 .chest  { display: flex; justify-content: space-between; align-items: center; flex: .8 }
 .toy    { cursor: -webkit-grab; display: flex; flex-direction: column; align-items: center; }
