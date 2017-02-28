@@ -1,9 +1,7 @@
 import {createStore, combineReducers} from 'redux';
-import panel from './panel'
-import infra from './infra'
+import mat from './mat'
 const reducers = combineReducers({
-  panel,
-  infra,
+  mat,
 })
 
 const store = createStore(
