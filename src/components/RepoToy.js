@@ -5,7 +5,9 @@ export default class RepoToy extends Component {
   render() {
   return(
     <Toy name="repo">
-      <div className="triangle"></div>
+      <div className="image">
+        <img src="triangle@2x.png" style={{width: '85px'}}/>
+      </div>
       <div>git repo</div>
     </Toy>
   )}

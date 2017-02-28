@@ -18,8 +18,10 @@ class BigBox extends Component {
   render() {
   return(
     <Toy name="bigbox" handleDrop={this.handleDrop}>
-      <img alt="Toy Box representing a virtual machine" style={{width: '40px'}} src="https://ae01.alicdn.com/kf/HTB1GWR9KFXXXXcmXXXXq6xXFXXXA/Baby-Toys-Shape-Sorting-Cube-Classic-Educational-Wooden-Toys-For-Children-Intellectual-Toy-Geometry-Box-Birthday.jpg" />
-      <div>big box</div>
+      <div className="image">
+        <img alt="Toy Box representing a virtual machine" style={{width: '238px'}} src="bigbox@2x.png" />
+      </div>
+      <div className="label">big box</div>
     </Toy>
   )}
 }

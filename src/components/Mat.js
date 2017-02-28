@@ -14,15 +14,15 @@ class Mat extends Component {
     const { box } = this.props;
     const isActive = canDrop && isOver;
 
-    let backgroundColor = 'white';
+    let className = "mat";
     if (isActive) {
-      backgroundColor = 'hotpink';
+      className += ' dropactive';
     } else if (canDrop) {
-      backgroundColor = 'cornflowerblue';
+      className += ' droptarget';
     }
 
     return connectDropTarget(
-      <div className="mat" style={{backgroundColor}}>
+      <div className={className}>
         { box ?
           box.name
         : isActive ?
